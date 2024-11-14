@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# add archlinuxcn source
+echo -e "\n[archlinuxcn]\nServer = https://mirrors.ustc.edu.cn/archlinuxcn/\$arch" | sudo tee -a /etc/pacman.conf
+sudo pacman -Syu
+sudo pacman -S archlinuxcn-keyring
+
+sudo pacman -S zsh
+chsh -s $(which zsh)
+
+rm -rf "$HOME/.bashrc"
+rm -rf "$HOME/.bash_profile"
+rm -rf "$HOME/.bash_history"
+
+source ./common
+
+# fcitx5
+ENV_VARS=(
+  'GTK_IM_MODULE=fcitx'
+  'QT_IM_MODULE=fcitx'
+  'XMODIFIERS=@im=fcitx'
+)
+for var in "${ENV_VARS[@]}"; do
+  echo "$var" | tee -a "$HOME/.xprofile"
+done
+
+sudo pacman -S fcitx5 fcitx5-gtk fcitx5-qt fcitx5-rime librime fcitx5-skin-adwaita-dark
+if [ -d "$HOME/.local/share/fcitx5/rime" ]; then
+  echo "backup existing rime config"
+  mv "$HOME/.local/share/fcitx5/rime" "$HOME/.local/share/fcitx5/rime_bak"
+else
+  mkdir -p "$HOME/.local/share/fcitx5"
+fi
+git clone https://github.com/gaboolic/rime-frost --depth=1 ~/.local/share/fcitx5/rime
+
+sudo pacman -S v2raya ripgrep fd tmux fzf eza bat neovim-git
+sudo systemctl enable v2raya
+
+sudo pacman -S kvantum kitty flameshot btop
+
+sudo pacman -S ttf-maple ttf-jetbrains-mono-nerd ttf-lxgw-wenkai ttf-nerd-fonts-symbols
