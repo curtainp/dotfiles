@@ -80,8 +80,8 @@ alias ln="${aliases[ln]:-ln} -iv"
 alias mv="${aliases[mv]:-mv} -iv"
 alias rm="${aliases[rm]:-rm} -i"
 alias mkdir="${aliases[mkdir]:-mkdir} -p"
-(( $+commands[nvim] )) && alias vi=nvim && alias vim=nvim
-(( $+commands[lazygit] )) && alias lg=lazygit
+alias vi=nvim && alias vim=nvim
+alias lg=lazygit
 
 
 export EDITOR='nvim'
@@ -89,6 +89,26 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+
+# Python
+if [[ -d ~/.pyenv/shims ]]; then
+  export PATH="$HOME/.pyenv/shims:$PATH"
+fi
+
+# Rust
+if [[ -d ~/.cargo/bin ]]; then
+  export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+# doom emacs
+if [[ -d ~/.config/emacs/bin ]]; then
+  export PATH="$HOME/.config/emacs/bin:$PATH"
+fi
+
+# Shell integrations
+if [[ -f "/opt/homebrew/bin/brew" ]] then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 eval "$(zoxide init zsh)"
 
