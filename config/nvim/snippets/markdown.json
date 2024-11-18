@@ -1,0 +1,23 @@
+{
+    "scheme": {
+        "prefix": "header",
+        "body": [
+            "+++",
+            "title = ${1:title}",
+            "author = [${2:author}]",
+            "date = $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+            "",
+            "[taxonomies]",
+            "tags = [${3:tags}]",
+            "categories = [${4:categories}]",
+            "",
+            "[extra]",
+            "toc = true",
+            "comment = true",
+            "+++",
+            "",
+            "$0"
+        ],
+        "description": "blog header"
+    }
+}

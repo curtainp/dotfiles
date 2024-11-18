@@ -70,6 +70,7 @@ local servers = {
   'pyright',
   'bashls',
   'jsonls',
+  'marksman',
   -- 'ts_ls',
   -- 'eslint',
 }

@@ -1,22 +1,23 @@
 local g = vim.g
 vim.loader.enable()
-g.mapleader = vim.keycode('<space>')
+g.mapleader = vim.keycode("<space>")
 -- the programming language which i write.
 _G.program_ft = {
-  'c',
-  'cpp',
-  'rust',
-  'lua',
-  'sh',
-  'python',
-  'javascript',
-  'javascriptreact',
-  'typescript',
-  'typescriptreact',
-  'json',
-  'html',
+	"c",
+	"cpp",
+	"rust",
+	"lua",
+	"sh",
+	"markdown",
+	"python",
+	"javascript",
+	"javascriptreact",
+	"typescript",
+	"typescriptreact",
+	"json",
+	"html",
 }
-_G.is_mac = vim.uv.os_uname().sysname == 'Darwin'
+_G.is_mac = vim.uv.os_uname().sysname == "Darwin"
 
 --disable_distribution_plugins
 g.loaded_gzip = 1
@@ -36,6 +37,6 @@ g.loaded_netrwPlugin = 1
 g.loaded_matchparen = 1
 
 -- Load Modules
-require('core')
-require('internal.event')
+require("core")
+require("internal.event")
 -- require('internal.completion')
