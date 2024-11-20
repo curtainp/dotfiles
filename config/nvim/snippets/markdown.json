@@ -1,6 +1,6 @@
 {
-    "scheme": {
-        "prefix": "header",
+    "blog_header": {
+        "prefix": "blog_header",
         "body": [
             "+++",
             "title = ${1:title}",
@@ -19,5 +19,37 @@
             "$0"
         ],
         "description": "blog header"
+    },
+    "blog_img": {
+        "prefix": "blog_img",
+        "body": ["{{ figure(src=\"${1:file_path}\" alt=\"${2:alt_info}\")}}"],
+        "description":"blog image"
+    },
+    "blog_callout": {
+        "prefix": "blog_callout",
+        "body": [
+            "{% ${1:|note,important,warning,alert,question,tip|}(header=\"${1:|note,important,warning,alert,question,tip|}\") %}",
+            "${2:note text}",
+            "{% end %}"
+        ],
+        "description":"blog callout, support `Note` `Important` `Warning` `Alert` `Question` `Tip`"
+    },
+    "blog_quote": {
+        "prefix": "blog_quote",
+        "body": [
+            "{% quote(cite=\"${1:cite}\") %}",
+            "${2:content}",
+            "{% end %}"
+        ],
+        "description":"blog quote"
+    },
+    "blog_detail": {
+        "prefix": "blog_detail",
+        "body": [
+            "{% detail(title=\"${1:title}\", default_open=${2:|false,true|}) %}",
+            "${2:content}",
+            "{% end %}"
+        ],
+        "description":"blog detail"
     }
 }
