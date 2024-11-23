@@ -11,6 +11,16 @@ packadd({
 })
 
 packadd({
+  'nvim-flutter/flutter-tools.nvim',
+  ft = 'dart',
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+  },
+  -- default setup
+  opts = {},
+})
+
+packadd({
   'saghen/blink.cmp',
   event = { 'LspAttach' },
   dependencies = 'rafamadriz/friendly-snippets',

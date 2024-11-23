@@ -7,7 +7,11 @@ function config.guard()
     stdin = true,
     ignore_patterns = { 'neovim', 'vim' },
   })
-
+  ft('dart'):fmt({
+    cmd = 'dart',
+    args = { 'format' },
+    stdin = true,
+  })
   ft('lua'):fmt({
     cmd = 'stylua',
     args = { '-' },

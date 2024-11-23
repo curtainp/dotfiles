@@ -23,6 +23,7 @@ function M.nvim_treesitter()
       'sql',
       'markdown',
       'markdown_inline',
+      'dart',
       'json',
       'jsonc',
       'vimdoc',
