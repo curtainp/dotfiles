@@ -100,9 +100,18 @@ if [[ -d ~/.cargo/bin ]]; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
-# doom emacs
-if [[ -d ~/.config/emacs/bin ]]; then
-  export PATH="$HOME/.config/emacs/bin:$PATH"
+# Flutter
+if [[ -d ~/workspace/tools/flutter/bin ]]; then
+  export PATH="$HOME/workspace/tools/flutter/bin:$PATH"
+fi
+
+# Ruby
+if [[ -d /opt/homebrew/opt/ruby/bin ]]; then
+  export GEM_HOME=$HOME/.gem
+  export PATH="/opt/homebrew/opt/ruby/bin:$GEM_HOME/bin:$PATH"
+  export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+  export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby/lib/pkgconfig"
 fi
 
 # Shell integrations
