@@ -55,7 +55,7 @@ opt.number = true
 opt.signcolumn = 'yes'
 opt.spelloptions = 'camel'
 
-opt.textwidth = 80
+opt.textwidth = 100
 opt.colorcolumn = '+0'
 
 if vim.uv.os_uname().sysname == 'Darwin' then
