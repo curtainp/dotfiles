@@ -51,14 +51,17 @@ packadd({
     appearance = {
       nerd_font_variant = 'mono',
     },
-    windows = {
+    completion = {
       documentation = {
         auto_show = true,
         auto_show_delay_ms = 50,
       },
     },
+    sources = {
+      default = {'lsp', 'path', 'snippets', 'buffer'}
+    }
   },
-  opts_extend = { 'sources.completion.enabled_providers' },
+  opts_extend = { 'sources.default' },
 })
 
 packadd({
