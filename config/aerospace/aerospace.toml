@@ -206,3 +206,9 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
 run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'org.keepassxc.keepassxc'
+run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'net.freemacsoft.AppCleaner'
+run = 'layout floating'
