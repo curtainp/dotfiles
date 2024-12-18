@@ -26,6 +26,14 @@ packadd({
   end,
 })
 
+packadd({
+  'Civitasv/cmake-tools.nvim',
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+  },
+  config = conf.cmake,
+})
+
 -- packadd({
 --   'nvimdev/dbsession.nvim',
 --   cmd = { 'SessionSave', 'SessionLoad', 'SessionDelete' },
