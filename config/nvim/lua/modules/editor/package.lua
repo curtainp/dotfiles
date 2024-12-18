@@ -90,3 +90,8 @@ packadd({
     end, 0)
   end,
 })
+
+packadd({
+  'kylechui/nvim-surround',
+  opts = {}
+})
