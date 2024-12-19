@@ -84,42 +84,6 @@ map.i('<A-k>', function()
   return #line > 0 and '<Esc>:m .-2<CR>==gi' or '<Esc>kkddj:m .-2<CR>==gi'
 end, { expr = true })
 
--- map.i('<TAB>', function()
---   if tonumber(vim.fn.pumvisible()) == 1 then
---     return '<C-n>'
---   elseif vim.snippet.active({ direction = 1 }) then
---     return '<cmd>lua vim.snippet.jump(1)<cr>'
---   else
---     return '<TAB>'
---   end
--- end, { expr = true })
---
--- map.i('<S-TAB>', function()
---   if vim.fn.pumvisible() == 1 then
---     return '<C-p>'
---   elseif vim.snippet.active({ direction = -1 }) then
---     return '<cmd>lua vim.snippet.jump(-1)<CR>'
---   else
---     return '<S-TAB>'
---   end
--- end, { expr = true })
---
--- map.i('<CR>', function()
---   if tonumber(vim.fn.pumvisible()) == 1 then
---     return '<C-y>'
---   else
---     return _G.PairMate.cr()
---   end
--- end, { expr = true })
---
--- map.i('<C-e>', function()
---   if vim.fn.pumvisible() == 1 then
---     return '<C-e>'
---   else
---     return '<End>'
---   end
--- end, { expr = true })
-
 local ns_id, mark_id = vim.api.nvim_create_namespace('my_marks'), nil
 
 map.i('<C-t>', function()

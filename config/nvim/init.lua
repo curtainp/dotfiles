@@ -38,5 +38,5 @@ g.loaded_matchparen = 1
 
 -- Load Modules
 require("core")
-require("internal.event")
+require("internal")
 -- require('internal.completion')

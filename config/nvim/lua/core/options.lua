@@ -1,4 +1,4 @@
-local api, opt = vim.api, vim.opt
+local opt = vim.opt
 
 opt.hidden = true
 opt.magic = true
@@ -19,10 +19,10 @@ opt.smartcase = true
 opt.infercase = true
 opt.cursorline = true
 
-opt.completeopt = 'menu,menuone,noinsert,fuzzy,popup'
+opt.completeopt = 'menu,menuone,noinsert,popup'
 opt.showmode = false
 opt.shortmess = 'aoOTIcF'
-opt.scrolloff = 2
+opt.scrolloff = 3 -- minimal number of screen lines keep
 opt.sidescrolloff = 5
 opt.ruler = false
 opt.showtabline = 0

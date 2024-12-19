@@ -89,8 +89,8 @@ function config.cmake()
       },
     },
     cmake_runner = {
-      -- name = "terminal",
-      name = 'toggleterm',
+      name = 'quickfix',
+      -- name = 'toggleterm',
       opts = {},
       default_opts = { -- a list of default and possible values for runners
         quickfix = {
@@ -98,7 +98,7 @@ function config.cmake()
           position = 'belowright', -- "bottom", "top"
           size = 6,
           encoding = 'utf-8',
-          auto_close_when_success = true, -- typically, you can use it with the "always" option; it will auto-close the quickfix buffer if the execution is successful.
+          auto_close_when_success = false, -- typically, you can use it with the "always" option; it will auto-close the quickfix buffer if the execution is successful.
         },
         toggleterm = {
           -- direction = "horizontal", -- 'vertical' | 'horizontal' | 'tab' | 'float'
