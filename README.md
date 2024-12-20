@@ -4,14 +4,14 @@ OS: [ Arch Linux ](https://wiki.archlinux.org/title/Main_page)
 
 WM: [ bspwm ](https://github.com/baskerville/bspwm)
 
-Editor: [ Lazynvim ](https://www.lazyvim.org/)
+Editor: [ Neovim ](https://github.com/neovim/neovim/)
 
 Terminal: [ kitty ](https://sw.kovidgoyal.net/kitty/)
 
-Shell: [ fish ](https://fishshell.com/)
+Shell: [ zsh ](https://www.zsh.org/)
 
 Terminal Multiplexer: [ tmux ](https://github.com/tmux/tmux)
 
 Terminal Filemanager: [yazi](https://github.com/sxyazi/yazi)
 
-Browser: [ brave ](https://brave.com/)
+Browser: [ zen-browser ](https://zen-browser.app/)
