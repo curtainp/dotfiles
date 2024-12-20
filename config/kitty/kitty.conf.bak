@@ -1,10 +1,10 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
 # BEGIN_KITTY_FONTS
-font_family      family="JetBrains Mono"
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
+font_family      family='Maple Mono' style=Light
+bold_font        family='Maple Mono' style=ExtraBold
+italic_font      family='Maple Mono' style='Light Italic'
+bold_italic_font family='Maple Mono' style='ExtraBold Italic'
 # END_KITTY_FONTS
 
 map Ctrl+c copy_and_clear_or_interrupt
