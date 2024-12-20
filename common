@@ -4,7 +4,7 @@ home_config_dir="$HOME/.config"
 dotfiles_dir="$HOME/workspace/dotfiles"
 
 echo "[+] Link config folder"
-target_folders=("tmux" "kitty" "nvim")
+target_folders=("tmux" "kitty" "nvim" "yazi" "clangd")
 for folder_name in "${target_folders[@]}"; do
   folder="$dotfiles_dir/config/$folder_name"
   target_folder="$home_config_dir/$folder_name"

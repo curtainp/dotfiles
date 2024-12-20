@@ -34,8 +34,12 @@ packadd({
   config = conf.cmake,
 })
 
--- packadd({
---   'nvimdev/dbsession.nvim',
---   cmd = { 'SessionSave', 'SessionLoad', 'SessionDelete' },
---   opts = true,
--- })
+packadd({
+  'mikavilpas/yazi.nvim',
+  event = 'VeryLazy',
+  opts = {
+    floating_window_scaling_factor = 1,
+    open_for_directories = true,
+    open_multiple_tabs = true,
+  },
+})
