@@ -47,4 +47,4 @@ map.n({
   ['S'] = cmd('Yazi'),
 })
 map.nx('ga', cmd('Lspsaga code_action'))
-map.nt('<M-j>', cmd('Lspsaga term_toggle'))
+-- map.nt('<M-j>', cmd('Lspsaga term_toggle'))
