@@ -1,5 +1,4 @@
 local M = {}
-local api = vim.api
 
 function M.nvim_treesitter()
   vim.opt.foldmethod = 'expr'
@@ -41,6 +40,59 @@ function M.nvim_treesitter()
       end,
       additional_vim_regex_highlighting = false,
     },
+  })
+end
+
+function M.blink()
+  require('blink.cmp').setup({
+    keymap = {
+      ['<Tab>'] = {
+        'select_next',
+        'snippet_forward',
+        'fallback',
+      },
+      ['<S-Tab>'] = {
+        'select_prev',
+        'snippet_backward',
+        'fallback',
+      },
+      ['<CR>'] = {
+        'accept',
+        'fallback',
+      },
+    },
+    snippets = {
+      expand = function(snippet)
+        require('luasnip').lsp_expand(snippet)
+      end,
+      active = function(filter)
+        if filter and filter.direction then
+          require('luasnip').jumpable(filter.direction)
+        end
+        return require('luasnip').in_snippet()
+      end,
+      jump = function(direction)
+        require('luasnip').jump(direction)
+      end,
+    },
+    appearance = { kind_icons = _G.kind_icons },
+    completion = {
+      menu = {
+        border = 'rounded',
+      },
+      documentation = {
+        auto_show = true,
+        auto_show_delay_ms = 50,
+        window = {
+          border = 'rounded',
+        },
+      },
+      ghost_text = {
+        enabled = true,
+      },
+    },
+    sources = { default = { 'snippets', 'lsp', 'path', 'buffer' }, cmdline = {} },
+    signature = { window = { border = 'rounded' } },
   })
 end
 

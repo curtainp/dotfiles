@@ -1,82 +1,26 @@
-local lspconfig = require('lspconfig')
+local servers = require('modules.lsp.servers')
 
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(args)
-    local client = vim.lsp.get_clients({ id = args.data.client_id })[1]
-    client.server_capabilities.semanticTokensProvider = nil
-  end,
-})
-
-lspconfig.lua_ls.setup({
-  on_init = function(client)
-    local path = client.workspace_folders and client.workspace_folders[1].name
-    local fs_stat = vim.uv.fs_stat
-    if path and (fs_stat(path .. '/.luarc.json') or fs_stat(path .. '/.luarc.jsonc')) then
-      return
-    end
-    client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
-      runtime = { version = 'LuaJIT' },
-      completion = { callSnippet = 'Replace' },
-      workspace = {
-        checkThirdParty = false,
-        library = {
-          vim.env.VIMRUNTIME,
-          '${3rd}/luv/library',
-        },
-      },
-    })
-  end,
-  settings = { Lua = {} },
-})
-
-lspconfig.clangd.setup({
-  cmd = { 'clangd', '--background-index' },
-  init_options = { fallbackFlags = { vim.bo.filetype == 'cpp' and '-std=c++23' or nil } },
-  root_dir = function(fname)
-    return lspconfig.util.root_pattern(unpack({
-      --reorder
-      'compile_commands.json',
-      '.clangd',
-      '.clang-tidy',
-      '.clang-format',
-      'compile_flags.txt',
-      'configure.ac', -- AutoTools
-    }))(fname) or lspconfig.util.find_git_ancestor(fname)
-  end,
-})
-
-lspconfig.rust_analyzer.setup({
-  settings = {
-    ['rust-analyzer'] = {
-      imports = {
-        granularity = {
-          group = 'module',
-        },
-        prefix = 'self',
-      },
-      cargo = {
-        buildScripts = {
-          enable = true,
-        },
-      },
-      procMacro = {
-        enable = true,
-      },
-    },
+vim.lsp.set_log_level(vim.lsp.log_levels.OFF)
+local i = '●'
+vim.diagnostic.config({
+  signs = {
+    text = { i, i, i, i },
   },
 })
 
-local servers = {
-  'pyright',
-  'bashls',
-  'jsonls',
-  'marksman',
-  -- 'ts_ls',
-  -- 'eslint',
-}
+local on_attach = function(client, _)
+  vim.opt.omnifunc = 'v:lua.vim.lsp.omnifunc'
+  client.server_capabilities.semanticTokensProvider = nil
+end
 
-for _, server in ipairs(servers) do
-  lspconfig[server].setup({})
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
+
+for server, conf in pairs(servers) do
+  require('lspconfig')[server].setup(vim.tbl_deep_extend('force', {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }, conf))
 end
 
 vim.lsp.handlers['workspace/diagnostic/refresh'] = function(_, _, ctx)

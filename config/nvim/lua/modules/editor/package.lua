@@ -22,46 +22,10 @@ packadd({
 
 packadd({
   'saghen/blink.cmp',
-  event = { 'LspAttach' },
-  dependencies = 'rafamadriz/friendly-snippets',
+  event = 'LspAttach',
+  dependencies = { 'L3MON4D3/LuaSnip', version = 'v2.*' },
   version = 'v0.*',
-  opts = {
-    keymap = {
-      ['<TAB>'] = {
-        'select_next',
-        'snippet_forward',
-        'fallback',
-      },
-      ['<S-TAB>'] = {
-        'select_prev',
-        'snippet_backward',
-        'fallback',
-      },
-      ['<C-e>'] = {
-        'hide',
-        'fallback',
-      },
-      ['<CR>'] = {
-        'accept',
-        'fallback',
-      },
-      ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
-      ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
-    },
-    appearance = {
-      nerd_font_variant = 'mono',
-    },
-    completion = {
-      documentation = {
-        auto_show = true,
-        auto_show_delay_ms = 50,
-      },
-    },
-    sources = {
-      default = {'lsp', 'path', 'snippets', 'buffer'}
-    }
-  },
-  opts_extend = { 'sources.default' },
+  config = conf.blink,
 })
 
 packadd({
@@ -96,5 +60,5 @@ packadd({
 
 packadd({
   'kylechui/nvim-surround',
-  opts = {}
+  opts = {},
 })

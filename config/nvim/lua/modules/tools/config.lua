@@ -16,7 +16,7 @@ function config.guard()
     cmd = 'stylua',
     args = { '-' },
     stdin = true,
-    ignore_patterns = 'functional/*/*_spec.lua',
+    find = 'stylua.toml',
   })
   ft('rust'):fmt('rustfmt')
   ft('typescript', 'javascript', 'typescriptreact', 'javascriptreact'):fmt('prettier')
