@@ -28,6 +28,7 @@ packadd({
 
 packadd({
   'Civitasv/cmake-tools.nvim',
+  enabled = false,
   dependencies = {
     'nvim-lua/plenary.nvim',
   },
