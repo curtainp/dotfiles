@@ -45,7 +45,7 @@ au('BufEnter', {
   once = true,
   callback = function()
     require('keymap')
-    require('internal.buffer')
+    require('internal.cursor_word')
   end,
   desc = 'Lazy load my keymap and buffer relate commands and defaul opt plugins',
 })
@@ -128,28 +128,4 @@ au('InsertLeave', {
     end)
   end,
   desc = 'auto switch to abc input',
-})
-
-au('FileType', {
-  pattern = 'netrw',
-  callback = function()
-    local map = function(lhs, rhs, remap, desc)
-      vim.keymap.set('n', lhs, rhs, { buffer = true, remap = remap, desc = desc })
-    end
-    vim.wo.stc = ''
-    local function split(cmd)
-      return function()
-        vim.cmd(('%s %s'):format(cmd, vim.fn.expand('<cfile>')))
-      end
-    end
-    map('r', 'R', true, 'rename file')
-    map('l', '<CR>', true, 'open directory or file')
-    map('.', 'gh', true, 'toggle dotfiles')
-    map('H', 'u', true, 'go back')
-    map('h', '-^', true, 'go up')
-    map('c', '%', true, 'create file')
-    map('s', split('vsplit'), false, 'vsplit open')
-    map('v', split('split'), false, 'split open')
-    map('<C-l>', '<C-W>l', false)
-  end,
 })

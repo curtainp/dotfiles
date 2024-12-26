@@ -42,7 +42,7 @@ local function setcolor()
     NormalNC = { link = 'Normal' },
     CursorLine = { bg = colors.bg1 },
     CursorColumn = { link = 'CursorLine' },
-    CursorWord = { underline = true },
+    CursorWord = { link = 'CursorLine' },
     TabLineTop = { fg = colors.bg0, bg = colors.bg0, bold = true },
     TabLineSel = { fg = colors.fg1, bg = colors.bg0, bold = true },
     TabLine = { fg = colors.fg4, bg = colors.bg0, bold = true },
