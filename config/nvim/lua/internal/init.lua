@@ -76,6 +76,11 @@ au('InsertEnter', {
 
 au('LspAttach', {
   callback = function(args)
+    -- inlay hints
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client.server_capabilities.inlayHintProvider then
+      vim.lsp.inlay_hint.enable(true)
+    end
     if vim.bo[args.buf].filetype == 'lua' and api.nvim_buf_get_name(args.buf):find('_spec') then
       vim.diagnostic.enable(false, { bufnr = args.buf })
     end
