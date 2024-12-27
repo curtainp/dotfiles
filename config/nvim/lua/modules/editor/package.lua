@@ -46,10 +46,14 @@ packadd({
           select = {
             enable = true,
             keymaps = {
+              ['aa'] = { query = '@parameter.outer' },
+              ['ia'] = { query = '@parameter.inner' },
               ['af'] = '@function.outer',
               ['if'] = '@function.inner',
               ['ac'] = '@class.outer',
               ['ic'] = { query = '@class.inner' },
+              ['ai'] = '@conditional.outer',
+              ['ii'] = '@conditional.inner',
             },
           },
         },
