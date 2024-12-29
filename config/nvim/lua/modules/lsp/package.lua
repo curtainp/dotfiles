@@ -8,6 +8,7 @@ packadd({
 
 packadd({
   'nvimdev/lspsaga.nvim',
+  enabled = false,
   event = 'LspAttach',
   -- dev = true,
   config = function()

@@ -3,6 +3,7 @@ local M = {}
 function M.nvim_treesitter()
   vim.opt.foldmethod = 'expr'
   vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+  ---@diagnostic disable-next-line: missing-fields
   require('nvim-treesitter.configs').setup({
     ensure_installed = {
       'c',

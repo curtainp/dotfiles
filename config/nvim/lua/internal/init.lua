@@ -90,8 +90,34 @@ au('InsertEnter', {
   end,
 })
 
+local lsp_keymap = function(bufnr)
+  -- lsp-builtin
+  local set = function(keys, func, indesc)
+    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = indesc })
+  end
+  set('gr', '<cmd>FzfLua lsp_references<CR>', '[R]eferences')
+  set('gI', '<cmd>FzfLua lsp_implementations<CR>', '[I]mplementations')
+  set('K', function()
+    vim.lsp.buf.hover({ border = 'rounded' })
+  end, 'Hover')
+  set('gk', function()
+    vim.lsp.buf.signature_help({ border = 'rounded' })
+  end, 'LSP Signature help')
+  set('gD', '<cmd>FzfLua lsp_document_symbols<CR>', '[D]oc symbols')
+  set(
+    'gd',
+    "<cmd>lua require('fzf-lua').lsp_definitions{ jump_to_single_result = true }<CR>",
+    'definition'
+  )
+  set('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+  set('<leader>cn', vim.lsp.buf.rename, '[C]ode Item Re[N]ame')
+  set('<leader>ct', vim.lsp.buf.type_definition, '[C]ode [T]ype definition')
+  set('<leader>cd', vim.diagnostic.open_float, '[C]ode [D]iagnostic')
+end
+
 au('LspAttach', {
   callback = function(args)
+    lsp_keymap(args.buf)
     -- inlay hints
     local client = vim.lsp.get_client_by_id(args.data.client_id)
     if client and client.server_capabilities.inlayHintProvider then

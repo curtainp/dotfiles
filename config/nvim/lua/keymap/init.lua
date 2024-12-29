@@ -4,17 +4,17 @@ local cmd = map.cmd
 
 map.n({
   -- Lspsaga
-  ['[d'] = cmd('Lspsaga diagnostic_jump_next'),
-  [']d'] = cmd('Lspsaga diagnostic_jump_prev'),
-  ['K'] = cmd('Lspsaga hover_doc'),
-  ['ga'] = cmd('Lspsaga code_action'),
-  ['gr'] = cmd('Lspsaga rename'),
-  ['gd'] = cmd('Lspsaga peek_definition'),
-  ['gp'] = cmd('Lspsaga goto_definition'),
-  ['gh'] = cmd('Lspsaga finder'),
-  ['<Leader>o'] = cmd('Lspsaga outline'),
-  ['<Leader>dw'] = cmd('Lspsaga show_workspace_diagnostics'),
-  ['<Leader>db'] = cmd('Lspsaga show_buf_diagnostics'),
+  -- ['[d'] = cmd('Lspsaga diagnostic_jump_next'),
+  -- [']d'] = cmd('Lspsaga diagnostic_jump_prev'),
+  -- ['K'] = cmd('Lspsaga hover_doc'),
+  -- ['ga'] = cmd('Lspsaga code_action'),
+  -- ['gr'] = cmd('Lspsaga rename'),
+  -- ['gd'] = cmd('Lspsaga peek_definition'),
+  -- ['gp'] = cmd('Lspsaga goto_definition'),
+  -- ['gh'] = cmd('Lspsaga finder'),
+  -- ['<Leader>o'] = cmd('Lspsaga outline'),
+  -- ['<Leader>dw'] = cmd('Lspsaga show_workspace_diagnostics'),
+  -- ['<Leader>db'] = cmd('Lspsaga show_buf_diagnostics'),
   -- FzfLua
   ['<Leader>b'] = cmd('FzfLua buffers'),
   ['<Leader>fa'] = cmd('FzfLua live_grep_native'),
@@ -46,5 +46,5 @@ map.n({
   -- yazi
   ['S'] = cmd('Yazi'),
 })
-map.x('ga', cmd('Lspsaga code_action'))
+-- map.x('ga', cmd('Lspsaga code_action'))
 -- map.nt('<M-j>', cmd('Lspsaga term_toggle'))
