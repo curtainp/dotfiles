@@ -125,7 +125,16 @@ function M.blink()
         enabled = true,
       },
     },
-    sources = { default = { 'lsp', 'path', 'luasnip', 'buffer' }, cmdline = {} },
+    sources = {
+      default = { 'lsp', 'path', 'luasnip', 'buffer', 'lazydev' },
+      cmdline = {},
+      providers = {
+        lazydev = {
+          name = 'development',
+          module = 'lazydev.integrations.blink',
+        },
+      },
+    },
     signature = {
       enabled = true, -- NOTE: this is experimental, see @https://cmp.saghen.dev/configuration/signature.html
       window = { border = 'rounded' },

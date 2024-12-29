@@ -43,7 +43,7 @@ packadd({
   config = function()
     require('luasnip').config.setup({ enable_autosnippets = true })
     require('luasnip.loaders.from_lua').lazy_load({
-      paths = vim.fn.stdpath('config') .. '/lua/snippets',
+      paths = { vim.fn.stdpath('config') .. '/lua/snippets' },
     })
     require('luasnip.loaders.from_vscode').lazy_load({ paths = { './snippets' } })
   end,
@@ -79,6 +79,7 @@ packadd({
   ft = { 'c', 'rust', 'lua', 'cpp' },
   config = function()
     vim.defer_fn(function()
+      ---@diagnostic disable-next-line: missing-fields
       require('nvim-treesitter.configs').setup({
         textobjects = {
           select = {
@@ -113,5 +114,18 @@ packadd({
     signs = false,
     search = { pattern = [[\b(KEYWORDS)(\([^\)]*\))?:]] },
     highlight = { pattern = [[.*<((KEYWORDS)%(\(.{-1,}\))?):]] },
+  },
+})
+
+packadd({
+  'folke/lazydev.nvim',
+  dependencies = { 'Bilal2453/luvit-meta' },
+  ft = 'lua',
+  event = 'LspAttach',
+  opts = {
+    library = {
+      { path = 'luvit-meta/library', words = { 'vim%.uv', 'vim%.loop' } },
+      { path = 'lazy.nvim', words = { 'LazyPluginSpec' } },
+    },
   },
 })
