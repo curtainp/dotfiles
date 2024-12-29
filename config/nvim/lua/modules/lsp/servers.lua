@@ -79,7 +79,7 @@ local servers = {
   },
   bashls = {},
   jsonls = {},
-  marksman = {},
+  -- marksman = {},
 }
 
 return servers
