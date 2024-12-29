@@ -31,20 +31,20 @@ map.n({
   [']g'] = cmd('lua require"gitsigns".next_hunk()<CR>'),
   ['[g'] = cmd('lua require"gitsigns".prev_hunk()<CR>'),
   -- cmake-tools
-  ['cmr'] = cmd(
-    "if luaeval('require\"cmake-tools\".is_cmake_project()')|call execute('CMakeRun')|else|call execute('TermExec cmd=./run.sh')|endif"
-  ),
-  ['cmb'] = cmd(
-    "if luaeval('require\"cmake-tools\".is_cmake_project()')|call execute('CMakeBuild')|else|call execute('TermExec cmd=make')|endif"
-  ),
-  ['cmc'] = cmd(
-    "if luaeval('require\"cmake-tools\".is_cmake_project()')|call execute('CMakeGenerate')|else|call execute('TermExec cmd=./configure')|endif"
-  ),
-  ['cms'] = cmd(
-    "if luaeval('require\"cmake-tools\".is_cmake_project()')|call execute('CMakeStopRunner')|else|call execute('TermExec cmd=\\<C-c>')|endif"
-  ),
+  -- ['cmr'] = cmd(
+  --   "if luaeval('require\"cmake-tools\".is_cmake_project()')|call execute('CMakeRun')|else|call execute('TermExec cmd=./run.sh')|endif"
+  -- ),
+  -- ['cmb'] = cmd(
+  --   "if luaeval('require\"cmake-tools\".is_cmake_project()')|call execute('CMakeBuild')|else|call execute('TermExec cmd=make')|endif"
+  -- ),
+  -- ['cmc'] = cmd(
+  --   "if luaeval('require\"cmake-tools\".is_cmake_project()')|call execute('CMakeGenerate')|else|call execute('TermExec cmd=./configure')|endif"
+  -- ),
+  -- ['cms'] = cmd(
+  --   "if luaeval('require\"cmake-tools\".is_cmake_project()')|call execute('CMakeStopRunner')|else|call execute('TermExec cmd=\\<C-c>')|endif"
+  -- ),
   -- yazi
   ['S'] = cmd('Yazi'),
 })
-map.nx('ga', cmd('Lspsaga code_action'))
+map.x('ga', cmd('Lspsaga code_action'))
 -- map.nt('<M-j>', cmd('Lspsaga term_toggle'))

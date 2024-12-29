@@ -26,6 +26,42 @@ packadd({
   dependencies = { 'L3MON4D3/LuaSnip', version = 'v2.*' },
   version = 'v0.*',
   config = conf.blink,
+  opts_extend = { 'sources.completion.enabled_providers' },
+})
+
+packadd({
+  'L3MON4D3/LuaSnip',
+  keys = {
+    { '<C-f>', "<cmd>lua require('luasnip').expand()<CR>", desc = 'snippets trigger' },
+  },
+  dependencies = {
+    'nvim-treesitter/nvim-treesitter',
+    'TwIStOy/luasnip-snippets',
+  },
+  build = 'make install_jsregexp',
+  config = function()
+    require('luasnip').config.setup({ enable_autosnippets = true })
+    require('luasnip.loaders.from_lua').lazy_load({
+      paths = vim.fn.stdpath('config') .. '/lua/snippets',
+    })
+    require('luasnip.loaders.from_vscode').lazy_load({ paths = { './snippets' } })
+  end,
+})
+
+packadd({
+  'TwIStOy/luasnip-snippets',
+  dependencies = { 'L3MON4D3/LuaSnip' },
+  opts = {
+    user = {
+      name = 'curtain',
+    },
+    disable_auto_expansion = {
+      cpp = { 'i32', 'i64' },
+    },
+    disable_langs = {
+      'nix',
+    },
+  },
 })
 
 packadd({
