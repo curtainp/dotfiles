@@ -1,5 +1,20 @@
 local opt = vim.opt
 
+opt.confirm = true -- confirm before unsaved buffer
+opt.fillchars = {
+  foldopen = '',
+  foldclose = '',
+  fold = ' ',
+  foldsep = ' ',
+  diff = '╱',
+  eob = ' ',
+}
+opt.inccommand = 'nosplit' -- preview incremental substitute
+opt.mouse = 'a'
+opt.relativenumber = true
+opt.termguicolors = true
+opt.smoothscroll = true -- NOTE(curtain): experimental
+
 opt.hidden = true
 opt.magic = true
 opt.virtualedit = 'block'
@@ -16,21 +31,22 @@ opt.updatetime = 100
 opt.redrawtime = 1500
 opt.ignorecase = true
 opt.smartcase = true
+opt.smartindent = true
 opt.infercase = true
 opt.cursorline = true
 
 opt.completeopt = 'menu,menuone,noinsert,popup'
 opt.showmode = false
-opt.shortmess = 'aoOTIcF'
-opt.scrolloff = 3 -- minimal number of screen lines keep
+opt.shortmess:append({ W = true, I = true, c = true, C = true })
+opt.scrolloff = 4 -- minimal number of screen lines keep
 opt.sidescrolloff = 5
-opt.ruler = false
+opt.ruler = false -- disable default ruler
 opt.showtabline = 0
 opt.winwidth = 30
 opt.pumheight = 15
 opt.showcmd = false
 
-opt.laststatus = 3
+opt.laststatus = 3 -- global statusline
 opt.list = true
 
 --eol:¬
