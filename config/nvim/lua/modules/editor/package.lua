@@ -31,6 +31,7 @@ packadd({
 
 packadd({
   'L3MON4D3/LuaSnip',
+  event = 'BufEnter */*',
   keys = {
     { '<C-f>', "<cmd>lua require('luasnip').expand()<CR>", desc = 'snippets trigger' },
   },
@@ -50,6 +51,7 @@ packadd({
 
 packadd({
   'TwIStOy/luasnip-snippets',
+  event = 'BufEnter */*',
   dependencies = { 'L3MON4D3/LuaSnip' },
   opts = {
     user = {
@@ -100,5 +102,16 @@ packadd({
 
 packadd({
   'kylechui/nvim-surround',
+  event = { 'BufRead', 'BufNewFile' },
   opts = {},
+})
+
+packadd({
+  'folke/todo-comments.nvim',
+  event = 'BufEnter */*',
+  opts = {
+    signs = false,
+    search = { pattern = [[\b(KEYWORDS)(\([^\)]*\))?:]] },
+    highlight = { pattern = [[.*<((KEYWORDS)%(\(.{-1,}\))?):]] },
+  },
 })
