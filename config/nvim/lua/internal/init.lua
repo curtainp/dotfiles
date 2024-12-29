@@ -15,6 +15,22 @@ au('TextYankPost', {
   end,
 })
 
+-- disable diagnostic when select mode
+au('ModeChanged', {
+  group = vim.api.nvim_create_augroup('diag_in_select', { clear = true }),
+  pattern = '*:s',
+  callback = function()
+    vim.diagnostic.enable(false)
+  end,
+})
+au('ModeChanged', {
+  group = vim.api.nvim_create_augroup('diag_in_select', { clear = false }),
+  pattern = '[is]:n',
+  callback = function()
+    vim.diagnostic.enable()
+  end,
+})
+
 au('FileType', {
   group = group,
   pattern = {
