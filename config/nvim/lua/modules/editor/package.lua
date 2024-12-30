@@ -1,13 +1,25 @@
 local conf = require('modules.editor.config')
+local conf_telescope = require('modules.editor.telescope')
 
 -- app list
 -- vim.split(vim.fn.globpath('/Applications/', '*.app'), '\n')
 packadd({
   'ibhagwan/fzf-lua',
+  enabled = false,
   cmd = 'FzfLua',
   config = function()
     require('fzf-lua').setup({ 'max-perf' })
   end,
+})
+
+packadd({
+  'nvim-telescope/telescope.nvim',
+  tag = '0.1.8',
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  },
+  config = conf_telescope.setup,
 })
 
 packadd({

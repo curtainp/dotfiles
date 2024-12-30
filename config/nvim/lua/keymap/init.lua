@@ -16,17 +16,33 @@ map.n({
   -- ['<Leader>dw'] = cmd('Lspsaga show_workspace_diagnostics'),
   -- ['<Leader>db'] = cmd('Lspsaga show_buf_diagnostics'),
   -- FzfLua
-  ['<Leader>b'] = cmd('FzfLua buffers'),
-  ['<Leader>fa'] = cmd('FzfLua live_grep_native'),
-  ['<Leader>fs'] = cmd('FzfLua grep_cword'),
-  ['<Leader>ff'] = cmd('FzfLua files'),
-  ['<Leader>fh'] = cmd('FzfLua helptags'),
-  ['<Leader>fo'] = cmd('FzfLua oldfiles'),
-  ['<Leader>fg'] = cmd('FzfLua git_files'),
-  ['<Leader>gc'] = cmd('FzfLua git_commits'),
-  ['<Leader>fc'] = cmd('FzfLua files cwd=$HOME/.config'),
+  -- ['<Leader>b'] = cmd('FzfLua buffers'),
+  -- ['<Leader>fa'] = cmd('FzfLua live_grep_native'),
+  -- ['<Leader>fs'] = cmd('FzfLua grep_cword'),
+  -- ['<Leader>ff'] = cmd('FzfLua files'),
+  -- ['<Leader>fh'] = cmd('FzfLua helptags'),
+  -- ['<Leader>fo'] = cmd('FzfLua oldfiles'),
+  -- ['<Leader>fg'] = cmd('FzfLua git_files'),
+  -- ['<Leader>gc'] = cmd('FzfLua git_commits'),
+  -- ['<Leader>fc'] = cmd('FzfLua files cwd=$HOME/.config'),
   -- flybuf.nvim
   ['<Leader>j'] = cmd('FlyBuf'),
+  -- telescope
+  ['<space>fh'] = cmd('lua require("telescope.builtin").help_tags()'),
+  ['<space>ff'] = cmd('lua require("telescope.builtin").find_files()'),
+  ['<space>fb'] = cmd('lua require("telescope.builtin").buffers()'),
+  ['<space>/'] = cmd('lua require("telescope.builtin").current_buffer_fuzzy_find()'),
+  ['<space>vc'] = function()
+    require('telescope.builtin').find_files({
+      cwd = vim.fn.stdpath('config'),
+    })
+  end,
+  ['<space>vp'] = function()
+    require('telescope.builtin').find_files({
+      ---@diagnostic disable-next-line: param-type-mismatch
+      cwd = vim.fs.joinpath(vim.fn.stdpath('data'), 'lazy'),
+    })
+  end,
   --gitsign
   [']g'] = cmd('lua require"gitsigns".next_hunk()<CR>'),
   ['[g'] = cmd('lua require"gitsigns".prev_hunk()<CR>'),
