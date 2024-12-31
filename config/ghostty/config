@@ -1,0 +1,7 @@
+font-family = "JetBrains Mono"
+font-family = "Symbols Nerd Font Mono"
+font-family = "LXGW WenKai Mono"
+font-size = 18
+cursor-style = block
+theme = "gruvboxdark"
+window-decoration = false
