@@ -127,7 +127,7 @@ function M.blink()
       },
     },
     sources = {
-      default = { 'lsp', 'path', 'luasnip', 'buffer', 'lazydev' },
+      default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev' },
       cmdline = {},
       providers = {
         lazydev = {

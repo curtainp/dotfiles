@@ -4,4 +4,7 @@ font-family = "LXGW WenKai Mono"
 font-size = 18
 cursor-style = block
 theme = "gruvboxdark"
-window-decoration = false
+# window-decoration = false
+macos-non-native-fullscreen = visible-menu
+# this option only work with window-decoration equal to false
+fullscreen = true
