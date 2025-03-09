@@ -128,7 +128,7 @@ function M.blink()
     },
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev' },
-      cmdline = {},
+      -- cmdline = {},
       providers = {
         lazydev = {
           name = 'development',
