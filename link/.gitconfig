@@ -2,7 +2,12 @@
 [user]
 	name = curtainp
 	email = curtainwk@gmail.com
+	signingkey = 45836EB6A52FF303
 [pull]
 	rebase = true
 [init]
 	defaultBranch = main
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
