@@ -1,6 +1,6 @@
 require('core.pack'):boot_strap()
 require('core.options')
--- vim.cmd.colorscheme('gruvbox')
+vim.cmd.colorscheme('gruvbox')
 _G.kind_icons = {
   Array = ' ',
   Boolean = '󰨙 ',
