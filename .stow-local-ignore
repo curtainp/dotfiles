@@ -1,0 +1,6 @@
+\.git
+\.gitmodules
+
+^/README.*
+^/LICENSE.*
+^/COPYING

@@ -12,18 +12,6 @@ rm -rf "$HOME/.bashrc"
 rm -rf "$HOME/.bash_profile"
 rm -rf "$HOME/.bash_history"
 
-source ./common
-
-# fcitx5
-ENV_VARS=(
-  'GTK_IM_MODULE=fcitx'
-  'QT_IM_MODULE=fcitx'
-  'XMODIFIERS=@im=fcitx'
-)
-for var in "${ENV_VARS[@]}"; do
-  echo "$var" | tee -a "$HOME/.xprofile"
-done
-
 sudo pacman -S fcitx5 fcitx5-gtk fcitx5-qt fcitx5-rime librime fcitx5-skin-adwaita-dark
 if [ -d "$HOME/.local/share/fcitx5/rime" ]; then
   echo "backup existing rime config"

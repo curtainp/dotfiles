@@ -4,8 +4,6 @@
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
-source ./common
-
 if ! xcode-select --print-path &>/dev/null; then
   xcode-select --install &> /dev/null
   until xcode-select --print-path &> /dev/null; do
