@@ -1,10 +1,10 @@
 # font-family = "Iosevka"
-font-family = "Maple Mono"
+font-family = "JetBrainsMono Nerd Font"
 font-family = "Symbols Nerd Font Mono"
 font-family = "LXGW WenKai Mono"
-font-size = 16
+font-size = 14
 cursor-style = block
-theme = "gruvboxdark"
+theme = "catppuccin-mocha"
 # background-opacity = 0.6
 # window-theme = ghostty
 # background = "#0f0b06"
@@ -14,4 +14,4 @@ theme = "gruvboxdark"
 # window-decoration = false
 macos-non-native-fullscreen = visible-menu
 # this option only work with window-decoration equal to false
-fullscreen = true
+fullscreen = false
