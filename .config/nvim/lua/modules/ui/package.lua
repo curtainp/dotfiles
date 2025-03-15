@@ -15,6 +15,12 @@ packadd({
 })
 
 packadd({
+  'catppuccin/nvim',
+  name = 'catppuccin',
+  priority = 1000
+})
+
+packadd({
   'nvimdev/indentmini.nvim',
   event = 'BufEnter */*',
   config = function()
