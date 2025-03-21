@@ -10,8 +10,8 @@ export TERM=xterm-256color
 
 ##### Linux #####
 # theme #
-export QT_QPA_PLATFORMTHEME=qt5ct
-export QT_STYLE_OVERRIDE=adwaita-dark
-export GTK_THEME=Adwaita-dark
+# export QT_QPA_PLATFORMTHEME=qt5ct
+# export QT_STYLE_OVERRIDE=adwaita-dark
+# export GTK_THEME=Adwaita-dark
 # wayland #
 export WLR_DRM_NO_ATOMIC=1

@@ -97,6 +97,11 @@ if [[ -d ~/.pyenv/shims ]]; then
   export PATH="$HOME/.pyenv/shims:$PATH"
 fi
 
+# local/bin
+if [[ -d ~/.local/bin ]];then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
 # Rust
 if [[ -d ~/.cargo/bin ]]; then
   export PATH="$HOME/.cargo/bin:$PATH"
