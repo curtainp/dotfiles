@@ -4,6 +4,7 @@ g.mapleader = vim.keycode('<space>')
 -- the programming language which i write.
 _G.program_ft = {
   'c',
+  'go',
   'cpp',
   'rust',
   'lua',
