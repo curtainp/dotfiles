@@ -36,9 +36,9 @@ packadd({
   'saghen/blink.cmp',
   event = 'LspAttach',
   dependencies = { 'L3MON4D3/LuaSnip', version = 'v2.*' },
-  version = 'v0.*',
+  version = '1.*',
   config = conf.blink,
-  opts_extend = { 'sources.completion.enabled_providers' },
+  opts_extend = { 'sources.default' },
 })
 
 packadd({

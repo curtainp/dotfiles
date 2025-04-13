@@ -44,52 +44,11 @@ function M.nvim_treesitter()
   })
 end
 
----@param direction "backward"|"forward"
-local super_tab = function(direction)
-  local ret = {
-    function(cmp)
-      local ls = require('luasnip')
-      local current_node = ls.session.current_nodes[vim.api.nvim_get_current_buf()]
-      if not ls.session or not current_node or ls.session.jump_active then
-        return false
-      end
-      local current_start, current_end = current_node:get_buf_position()
-      current_start[1] = current_start[1] + 1 -- (1, 0) indexed
-      current_end[1] = current_end[1] + 1 -- (1, 0) indexed
-      local cursor = vim.api.nvim_win_get_cursor(0)
-      if
-        cursor[1] < current_start[1]
-        or cursor[1] > current_end[1]
-        or cursor[2] < current_start[2]
-        or cursor[2] > current_end[2]
-      then
-        ls.unlink_current()
-        return false
-      end
-      cmp.hide()
-      if direction == 'backward' then
-        return cmp.snippet_backward()
-      elseif direction == 'forward' then
-        return cmp.snippet_forward()
-      end
-    end,
-    'select_next',
-    'fallback',
-  }
-  if direction == 'backward' then
-    ret[2] = 'select_prev'
-  end
-  return ret
-end
-
 function M.blink()
   require('blink.cmp').setup({
     keymap = {
-      ['<Tab>'] = super_tab('forward'),
-      ['<S-Tab>'] = super_tab('backward'),
-      ['<CR>'] = { 'accept', 'fallback' },
-      ['<C-u>'] = { 'scroll_documentation_up', 'fallback' },
-      ['<C-d>'] = { 'scroll_documentation_down', 'fallback' },
+      ['<Tab>'] = { 'select_next', 'fallback' },
+      ['<S-Tab>'] = { 'select_prev', 'fallback' },
     },
     snippets = {
       expand = function(snippet)
