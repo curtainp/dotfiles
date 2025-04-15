@@ -1,3 +1,6 @@
+c = c
+config = config
+
 config.load_autoconfig()
 
 config.bind('<Alt-Shift-u>', 'spawn --userscript qute-keepassxc --key 613C26D0372EDC54A4123B4645836EB6A52FF303', mode='insert')
@@ -26,6 +29,7 @@ base0C = "#86c1b9"
 base0D = "#7cafc2"
 base0E = "#ba8baf"
 base0F = "#a16946"
+selected = "#783f04"
 
 # set qutebrowser colors
 
@@ -280,13 +284,13 @@ c.colors.tabs.pinned.odd.bg = base0B
 c.colors.tabs.pinned.odd.fg = base07
 
 # Background color of pinned selected even tabs.
-c.colors.tabs.pinned.selected.even.bg = base02
+c.colors.tabs.pinned.selected.even.bg = selected
 
 # Foreground color of pinned selected even tabs.
 c.colors.tabs.pinned.selected.even.fg = base05
 
 # Background color of pinned selected odd tabs.
-c.colors.tabs.pinned.selected.odd.bg = base02
+c.colors.tabs.pinned.selected.odd.bg = selected
 
 # Foreground color of pinned selected odd tabs.
 c.colors.tabs.pinned.selected.odd.fg = base05
@@ -295,13 +299,13 @@ c.colors.tabs.pinned.selected.odd.fg = base05
 c.colors.tabs.selected.odd.fg = base05
 
 # Background color of selected odd tabs.
-c.colors.tabs.selected.odd.bg = base02
+c.colors.tabs.selected.odd.bg = selected
 
 # Foreground color of selected even tabs.
 c.colors.tabs.selected.even.fg = base05
 
 # Background color of selected even tabs.
-c.colors.tabs.selected.even.bg = base02
+c.colors.tabs.selected.even.bg = selected
 
 # Background color for webpages if unset (or empty to use the theme's
 # color).

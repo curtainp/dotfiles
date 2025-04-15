@@ -18,3 +18,5 @@ settings:
         pw: spawn --userscript qute-keepassxc --key 613C26D0372EDC54A4123B4645836EB6A52FF303
   content.javascript.clipboard:
     https://github.com: access-paste
+  content.tls.certificate_errors:
+    global: ask-block-thirdparty
