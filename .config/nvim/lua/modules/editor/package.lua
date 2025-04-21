@@ -32,14 +32,14 @@ packadd({
   opts = {},
 })
 
-packadd({
-  'saghen/blink.cmp',
-  event = 'LspAttach',
-  dependencies = { 'L3MON4D3/LuaSnip', version = 'v2.*' },
-  version = '1.*',
-  config = conf.blink,
-  opts_extend = { 'sources.default' },
-})
+-- packadd({
+--   'saghen/blink.cmp',
+--   event = 'LspAttach',
+--   dependencies = { 'L3MON4D3/LuaSnip', version = 'v2.*' },
+--   version = '1.*',
+--   config = conf.blink,
+--   opts_extend = { 'sources.default' },
+-- })
 
 packadd({
   'L3MON4D3/LuaSnip',

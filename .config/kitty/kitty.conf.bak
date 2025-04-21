@@ -1,10 +1,10 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
 # BEGIN_KITTY_FONTS
-font_family      family='Maple Mono' style=Light
-bold_font        family='Maple Mono' style=ExtraBold
-italic_font      family='Maple Mono' style='Light Italic'
-bold_italic_font family='Maple Mono' style='ExtraBold Italic'
+font_family      family="JetBrainsMono"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
 # END_KITTY_FONTS
 
 map Ctrl+c copy_and_clear_or_interrupt
@@ -34,7 +34,7 @@ include symbol-map.conf
 #: <https://sw.kovidgoyal.net/kitty/kittens/choose-fonts/#font-spec-
 #: syntax>.
 
-font_size 13.0
+font_size 15.0
 
 #: Font size (in pts).
 
