@@ -267,6 +267,8 @@ spawn-at-startup "swaybg" "-o" "DP-3" "-i" "/home/curtain/Pictures/wallpapers/an
 spawn-at-startup "waybar"
 spawn-at-startup "dunst"
 spawn-at-startup "xwayland-satellite"
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 
 environment {
     DISPLAY ":1"
@@ -381,6 +383,7 @@ binds {
 
     Alt+Space { spawn "fuzzel"; }
     Super+Alt+L { spawn "swaylock"; }
+    Mod+Slash { spawn "bash" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.

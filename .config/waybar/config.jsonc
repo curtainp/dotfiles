@@ -8,13 +8,13 @@
     "spacing": 8, // Gaps between modules (8px)
 
     "modules-left": [
-        "clock#date",
+        "niri/workspaces",
         "wireplumber",
         "tray",
         "wlr/taskbar"
     ],
     "modules-center": [
-        "niri/workspaces"
+        "clock"
     ],
     "modules-right": [
         "cpu",
@@ -40,6 +40,38 @@
             }
         },
         "justify": "center"
+    },
+    "clock": {
+        "format": "  {:%a %R %Z}",
+        "format-alt": "{:%W %A %B %d %Y (%R %Z)}",
+        "tooltip": true,
+        "tooltip-format": "<big>{:%Y %B %d %W %A %R %Z}\n{tz_list}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col"  : 4,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "on-click-right": "mode",
+            "format": {
+            "months":     "<span color='#a9c080'><b>{}</b></span>",
+            "days":       "<span color='#d3c6aa'><b>{}</b></span>",
+            "weeks":      "<span color='#7fbbb3'><b>W{}</b></span>",
+            "weekdays":   "<span color='#7fbbb3'><b>{}</b></span>",
+            "today":      "<span color='#a7c080'><b><u>{}</u></b></span>"
+            }
+        }, 
+        "timezones": [
+            "Asia/Shanghai",
+            "Etc/UTC",
+            "America/New_York"
+        ],
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
     },
 
     "wlr/taskbar": {
@@ -79,6 +111,32 @@
     "tray": {
         "icon-size": 20,
         "spacing": 10
+    },
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon} {randomIcon} {repeatIcon} {singleIcon} {artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon} Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "custom/weather": {
         "format": "{} °",
@@ -129,7 +187,8 @@
         "tooltip-format": "{ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠ ",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-right": "$HOME/.config/waybar/modules/wifiselector.sh"
     },
     "mpris": {
         "format": "{player_icon} {dynamic}",
