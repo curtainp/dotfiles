@@ -65,6 +65,7 @@ input {
     // focus-follows-mouse max-scroll-amount="0%"
 }
 
+
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".
@@ -82,15 +83,15 @@ output "DP-2" {
     // for the resolution.
     // If the mode is omitted altogether or is invalid, niri will pick one automatically.
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "3840x2160"
 
+    mode "2560x1440"
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
     scale 1.25
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
-    transform "normal"
 
+    transform "90"
     // Position of the output in the global coordinate space.
     // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
     // The cursor can only move between directly adjacent outputs.
@@ -104,11 +105,10 @@ output "DP-2" {
 }
 
 output "DP-3" {
-  mode "2560x1440"
-  scale 1
-  transform "90"
+  mode "3840x2160"
+  scale 1.25
+  transform "normal"
 }
-
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
@@ -210,7 +210,7 @@ layout {
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        // on
+        on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -226,22 +226,22 @@ layout {
         // window. These will also remove client-side shadows if the window
         // draws any.
         // 
-        // draw-behind-window true
+        draw-behind-window true
 
         // You can change how shadows look. The values below are in logical
         // pixels and match the CSS box-shadow properties.
 
         // Softness controls the shadow blur radius.
-        softness 30
+        softness 20
 
         // Spread expands the shadow.
         spread 5
 
         // Offset moves the shadow relative to the window.
-        offset x=0 y=5
+        offset x=5 y=5
 
         // You can also change the shadow color and opacity.
-        color "#0007"
+        color "#000000aa"
     }
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
@@ -264,7 +264,35 @@ layout {
 // spawn-at-startup "alacritty" "-e" "fish"
 spawn-at-startup "swaybg" "-o" "DP-2" "-i" "/home/curtain/Pictures/wallpapers/anna-scarfiello-Pxf5syDVuxQ.jpg"
 spawn-at-startup "swaybg" "-o" "DP-3" "-i" "/home/curtain/Pictures/wallpapers/anna-scarfiello-Pxf5syDVuxQ.jpg"
+spawn-at-startup "waybar"
+spawn-at-startup "dunst"
+spawn-at-startup "xwayland-satellite"
 
+environment {
+    DISPLAY ":1"
+
+    CURRENT_COMPOSITOR "niri"
+
+    GDK_BACKEND "wayland,x11,*"
+    QT_QPA_PLATFORM "wayland;xcb"
+    SDL_VIDEODRIVER "wayland"
+    CLUTTER_BACKEND "wayland"
+
+    LIBVA_DRIVER_NAME "nvidia"
+    GBM_BACKEND "nvidia-drm"
+    __GLX_VENDOR_LIBRARY_NAME "nvidia"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    NVD_BACKEND "direct"
+
+    QT_AUTO_SCREEN_SCALE_FACTOR "1" 
+    QT_QPA_PLATFORM "wayland;xcb" 
+    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+    QT_QPA_PLATFORMTHEME "qt5ct"
+
+    XDG_CURRENT_DESKTOP "Niri"
+    XDG_SESSION_TYPE "wayland"
+    XDG_SESSION_DESKTOP "Niri"
+}
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
@@ -295,20 +323,24 @@ animations {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 
-// Work around WezTerm's initial configure bug
-// by setting an empty default-column-width.
 window-rule {
-    // This regular expression is intentionally made as specific as possible,
-    // since this is the default config, and we want no false positives.
-    // You can get away with just app-id="wezterm" if you want.
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
+  match app-id="librewolf"
+  open-on-output "DP-2"
+  draw-border-with-background true
 }
 
 window-rule {
-  match app-id="librewolf"
-  open-on-output "DP-3"
-  draw-border-with-background true
+  match title=r#"^(Open File)(.*)$"#
+  match title=r#"^(Select a File)(.*)$"#
+  match title=r#"^(Choose wallpaper)(.*)$"#
+  match title=r#"^(Open Folder)(.*)$"#
+  match title=r#"^(Save As)(.*)$"#
+  match title=r#"^(Library)(.*)$"#
+
+  // zen browser video
+  match title="Picture-in-Picture"
+
+  open-floating true
 }
 
 // Example: block out two password managers from screen capture.
@@ -318,9 +350,12 @@ window-rule {
 
     block-out-from "screen-capture"
 
+    open-floating true
+
     // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
 }
+
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
