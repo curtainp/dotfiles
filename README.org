@@ -1,0 +1,19 @@
+* Personal dotfiles, I like terminal workflow.
+
+OS: [[https://wiki.archlinux.org/title/Main_page][Arch Linux]]
+
+WM:[[https://github.com/YaLTeR/niri][ Niri]]
+
+Editor: Most within [[https://www.gnu.org/software/emacs/][Emacs]], do some transient job with [[https://neovim.io/][Neovim]]
+
+Terminal: [[https://sw.kovidgoyal.net/kitty/][Kitty]] 
+
+Shell: [[https://www.zsh.org/][zsh]]
+
+Terminal Multiplexer: [[https://github.com/tmux/tmux][tmux]]
+
+Terminal Filemanager: [[https://github.com/sxyazi/yazi][yazi]]
+
+Browser: [[https://qutebrowser.org/][ qutebrowser]] and  [[https://librewolf.net/][Librewolf]] for privacy
+
+[[file:assets/2025-04-22_17-28.png]]
