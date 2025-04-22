@@ -14,12 +14,12 @@
 }
 
 #waybar {
-	background: #1A1B26;
-	color: #fdf6e3;
-  transition-property: background-color;
-  transition-duration: 0.5s;
-  border-radius: 0px;
-  margin: 0;
+    background: #1A1B26;
+    color: #fdf6e3;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    border-radius: 0px;
+    margin: 0;
 }
 
 #workspaces,
@@ -29,15 +29,16 @@
 #wireplumber,
 #pulseaudio,
 #memory,
+#mpd,
 #cpu,
 #disk,
 #network,
 #window {
-  margin: 0;
-  padding: 0 10px;
-  border: 2px;
-  border-radius: 5px;
-	background: #24283B;
+    margin: 0;
+    padding: 0 10px;
+    border: 2px;
+    border-radius: 5px;
+    background: #24283B;
 }
 
 #workspaces button {
