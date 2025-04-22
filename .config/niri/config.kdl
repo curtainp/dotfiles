@@ -378,6 +378,14 @@ window-rule {
 }
 
 window-rule {
+  match app-id=r#"^(Pinentry)(.*)$"#
+
+  open-floating true
+  default-window-height { proportion 0.3; }
+  default-column-width { proportion 0.3; }
+}
+
+window-rule {
   match title=r#"^(Open File)(.*)$"#
   match title=r#"^(Select a File)(.*)$"#
   match title=r#"^(Choose wallpaper)(.*)$"#
@@ -399,6 +407,8 @@ window-rule {
     block-out-from "screen-capture"
 
     open-floating true
+    default-window-height { proportion 0.3; }
+    default-column-width { proportion 0.3; }
 
     // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
