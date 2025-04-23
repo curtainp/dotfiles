@@ -4,7 +4,7 @@ OS: [[https://wiki.archlinux.org/title/Main_page][Arch Linux]]
 
 WM:[[https://github.com/YaLTeR/niri][ Niri]]
 
-Editor: Most within [[https://www.gnu.org/software/emacs/][Emacs]], do some transient job with [[https://neovim.io/][Neovim]]
+Editor: [[https://www.gnu.org/software/emacs/][Emacs]] ♥️ [[https://neovim.io/][Neovim]]
 
 Terminal: [[https://sw.kovidgoyal.net/kitty/][Kitty]] 
 
