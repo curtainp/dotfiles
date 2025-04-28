@@ -1,0 +1,18 @@
+CompileFlags:
+  Add:
+    - --no-cuda-version-check
+    - -Wno-unknown-warning-option
+    - -D__clangd__  # 添加你的自定义选项
+  Remove:
+    - -forward-unknown-to-host-compiler
+    - -expt-*
+    - --expt-*
+    - -gencode*
+    - --generate-code*
+    - -Xfatbin*
+    - -arch=*
+    - -rdc=*
+    - -mno-*
+InlayHints:
+  ParameterNames: Yes
+  DeducedTypes: Yes

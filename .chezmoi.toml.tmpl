@@ -1,0 +1,15 @@
+paper = "less -R"
+encryption = "gpg"
+
+[add]
+  secrets = "error"
+
+[edit]
+  apply = true
+
+[gpg]
+  recipient = "curtainwk@gmail.com"
+
+[hooks.edit-config-template.post]
+  command = "chezmoi"
+  args = ["init"]

@@ -1,0 +1,18 @@
+font-family = "Iosevka"
+font-family = "JetBrainsMono Nerd Font"
+font-family = "Symbols Nerd Font Mono"
+font-family = "LXGW WenKai Mono"
+font-size = 16
+cursor-style = bar
+adjust-cursor-thickness = 20%
+theme = "catppuccin-mocha"
+# background-opacity = 0.6
+# window-theme = ghostty
+# background = "#0f0b06"
+# foreground = "#f8f8f2"
+# unfocused-split-fill = "#0d0d0d"
+# background-blur-radius = 20
+# window-decoration = false
+macos-non-native-fullscreen = visible-menu
+# this option only work with window-decoration equal to false
+fullscreen = false

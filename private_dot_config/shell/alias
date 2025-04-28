@@ -1,0 +1,12 @@
+alias \
+\
+cat="bat -p" \
+ls="eza --group-directories-first" \
+la="eza --group-directories-first -la" \
+ll="eza --group-directories-first -l --git" \
+fk="sudo !!" \
+rm="rm -Iv" \
+df="df -h" \
+mv="mv -i" \
+du="du -h -d 1" \
+k="killall"

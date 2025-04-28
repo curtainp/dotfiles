@@ -1,0 +1,241 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 4,
+    "margin-bottom": 0,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 8, // Gaps between modules (8px)
+
+    "modules-left": [
+        "niri/workspaces",
+        "wireplumber",
+        "mpd",
+        "tray",
+        "wlr/taskbar"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "network",
+        "custom/weather",
+        "custom/power"
+    ],
+    "clock#date": {
+        "format": "{:%H:%M %m-%d %a}", // Icon: calendar-alt
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#eebebe'><b>{}</b></span>",
+                "days": "<span color='#ffe6ff'><b>{}</b></span>",
+                "weeks": "<span color='#c6a0f6'><b>W{}</b></span>",
+                "weekdays": "<span color='#eebebe'><b>{}</b></span>",
+                "today": "<span color='#ed8796'><b><u>{}</u></b></span>"
+            }
+        },
+        "justify": "center"
+    },
+    "clock": {
+        "format": "  {:%a %R %Z}",
+        "format-alt": "{:%W %A %B %d %Y (%R %Z)}",
+        "tooltip": true,
+        "tooltip-format": "<big>{:%Y %B %d %W %A %R %Z}\n{tz_list}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col"  : 4,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "on-click-right": "mode",
+            "format": {
+            "months":     "<span color='#a9c080'><b>{}</b></span>",
+            "days":       "<span color='#d3c6aa'><b>{}</b></span>",
+            "weeks":      "<span color='#7fbbb3'><b>W{}</b></span>",
+            "weekdays":   "<span color='#7fbbb3'><b>{}</b></span>",
+            "today":      "<span color='#a7c080'><b><u>{}</u></b></span>"
+            }
+        }, 
+        "timezones": [
+            "Asia/Shanghai",
+            "Etc/UTC",
+            "America/New_York"
+        ],
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon} ",
+        "tooltip-format": "{title} | {app_id}",
+        "icon-size": 20,
+        "spacing": 10,
+        "all-outputs": true,
+        "on-click": "activate",
+        "on-click-middle": "close",
+        // "on-click-right": "fullscreen"
+    },
+    "niri/language": {
+        "format": "{short}",
+    },
+    "wireplumber": {
+        "on-click": "pavucontrol",
+        "on-click-right": "amixer sset Master toggle 1>/dev/null",
+        "on-scroll-down": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.05-",
+        "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.05+",
+        "format": "{icon} {volume}%",
+        "format-source": " ",
+        "format-source-muted": " ",
+        "format-muted": "<span foreground='#fab387'>  MUT</span>",
+        "format-icons": {
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": " ",
+            "portable": " ",
+            "car": " ",
+            "default": " "
+          // "default": [" ", " ", " "]
+        },
+        "justify": "center"
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10
+    },
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon} {randomIcon} {repeatIcon} {singleIcon} {artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩",
+        // "format": "{stateIcon} {consumeIcon} {randomIcon} {repeatIcon} {singleIcon} {artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon} Stopped ",
+        "on-click": "rmpc togglepause",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "playing": "",
+            "paused": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "custom/weather": {
+        "format": "{} °",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "wttrbar --location enshi --hide-conditions",
+        "return-type": "json",
+        "on-click": "yad --html --uri='https://wttr.in/enshi' --center --fixed --width=1000 --height=680 --timeout=60 --timeout-indicator=right"
+    },
+    "niri/workspaces": {
+        // "all-outputs": true,
+        "format": "{}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十",
+        },
+        "sort-by-number": true,
+        "active-only": false,
+        "justify": "center",
+    },
+    "cpu": {
+        "format": "  {usage}% {max_frequency:0.1f}GHz",
+        "on-click": "kitty -e btop",
+        "interval": 3,
+        "justify": "center",
+        "tooltip": false
+        //"max-length": 14,
+        //"min-length": 14,
+    },
+    "memory": {
+        "format": "  {used:0.1f}G",
+        "interval": 3,
+        "justify": "center",
+        "tooltip": false
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "  {essid} ({signalStrength}%)",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠ ",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-right": "$HOME/.config/waybar/modules/wifiselector.sh"
+    },
+    "mpris": {
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "player-icons": {
+            "default": "▶",
+            "mpv": "🎵"
+        },
+        "status-icons": {
+            "paused": "⏸"
+        }
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "",
+            "none": "",
+            "dnd-notification": "<",
+            "dnd-none": "",
+            "inhibited-notification": "",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+    "custom/power": {
+        "format" : "⏻ ",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/modules/power_menu.xml", // Menu file in resources folder
+        "menu-actions": {
+            "shutdown": "shutdown",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
+    }
+}
