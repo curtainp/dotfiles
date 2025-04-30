@@ -12,3 +12,5 @@ du="du -h -d 1" \
 k="killall" \
 icat="kitten icat" \
 open="xdg-open" \
+...="cd ../.." \
+....="cd ../../.."
