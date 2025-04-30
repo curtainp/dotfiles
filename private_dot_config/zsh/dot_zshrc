@@ -1,4 +1,10 @@
+#!/usr/bin/env bash
+
 export GPG_TTY=$(tty)
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # source global shell alias && variables
 [ -f "$XDG_CONFIG_HOME/shell/alias" ] && source "$XDG_CONFIG_HOME/shell/alias"
@@ -24,7 +30,7 @@ setopt globdots # include dotfiles
 setopt extended_glob # match ~ # ^
 setopt interactive_comments # allow comments in shell
 # unsetopt prompt_sp # don't autoclean blanklines
-stty stop undef # disable accidental ctrl s ???
+# stty stop undef # disable accidental ctrl s ???
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
@@ -101,10 +107,11 @@ function ra() {
 eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
 
-PROMPT="%K{#3b4252}%F{#ECEFF4} %n %K{#4c566a} %~ %f%k ❯ "
-
+source $XDG_DATA_HOME/zsh_plugins/powerlevel10k/powerlevel10k.zsh-theme
 # fzf-tab must be first, see README of it
 source $XDG_DATA_HOME/zsh_plugins/fzf-tab/fzf-tab.plugin.zsh
 source $XDG_DATA_HOME/zsh_plugins/zsh-autopair/autopair.zsh
 source $XDG_DATA_HOME/zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $XDG_DATA_HOME/zsh_plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

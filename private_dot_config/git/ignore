@@ -107,7 +107,6 @@ notes
 .zcomp*
 .pylint*
 .v8flags*
-*cache*
 .oh-my-zsh
 .vim/bundle
 .rustup
