@@ -1,0 +1,27 @@
+(defcfg
+    process-unmapped-keys yes
+)
+
+(defsrc
+    a s d f j k l ;
+)
+
+(defvar
+  tap-timeout 150
+  hold-timeout 200
+)
+
+(defalias
+    a (multi f24 (tap-hold $tap-timeout $hold-timeout a lmet))
+    s (multi f24 (tap-hold $tap-timeout $hold-timeout s lalt))
+    d (multi f24 (tap-hold $tap-timeout $hold-timeout d lsft))
+    f (multi f24 (tap-hold $tap-timeout $hold-timeout f lctl))
+    j (multi f24 (tap-hold $tap-timeout $hold-timeout j rctl))
+    k (multi f24 (tap-hold $tap-timeout $hold-timeout k rsft))
+    l (multi f24 (tap-hold $tap-timeout $hold-timeout l ralt))
+    ; (multi f24 (tap-hold $tap-timeout $hold-timeout ; rmet))
+)
+
+(deflayer base
+    @a @s @d @f @j @k @l @;
+)
