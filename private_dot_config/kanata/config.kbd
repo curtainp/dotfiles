@@ -1,27 +1,27 @@
+;; defsrc is still necessary
 (defcfg
-    process-unmapped-keys yes
+  process-unmapped-keys yes
 )
 
 (defsrc
-    a s d f j k l ;
+  a s d f j k l ;
 )
-
 (defvar
-  tap-timeout 150
-  hold-timeout 200
+  tap-time 150
+  hold-time 200
 )
 
 (defalias
-    a (multi f24 (tap-hold $tap-timeout $hold-timeout a lmet))
-    s (multi f24 (tap-hold $tap-timeout $hold-timeout s lalt))
-    d (multi f24 (tap-hold $tap-timeout $hold-timeout d lsft))
-    f (multi f24 (tap-hold $tap-timeout $hold-timeout f lctl))
-    j (multi f24 (tap-hold $tap-timeout $hold-timeout j rctl))
-    k (multi f24 (tap-hold $tap-timeout $hold-timeout k rsft))
-    l (multi f24 (tap-hold $tap-timeout $hold-timeout l ralt))
-    ; (multi f24 (tap-hold $tap-timeout $hold-timeout ; rmet))
+  a (multi f24 (tap-hold $tap-time $hold-time a lmet))
+  s (multi f24 (tap-hold $tap-time $hold-time s lalt))
+  d (multi f24 (tap-hold $tap-time $hold-time d lsft))
+  f (multi f24 (tap-hold $tap-time $hold-time f lctl))
+  j (multi f24 (tap-hold-release-timeout 200 500 j rctl j))
+  k (multi f24 (tap-hold-release-timeout 200 500 k rsft k))
+  l (multi f24 (tap-hold $tap-time $hold-time l ralt))
+  ; (multi f24 (tap-hold $tap-time $hold-time ; rmet))
 )
 
 (deflayer base
-    @a @s @d @f @j @k @l @;
+  @a @s @d @f @j @k @l @;
 )
