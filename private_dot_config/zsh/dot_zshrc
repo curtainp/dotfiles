@@ -50,8 +50,8 @@ bindkey "^e" end-of-line
 bindkey "^f" forward-char
 bindkey "^b" backward-char
 # bindkey "^k" kill-line
-bindkey "^j" backward-word
-bindkey "^k" forward-word
+# bindkey "^j" backward-word
+# bindkey "^k" forward-word
 bindkey "^H" backward-kill-word
 
 bindkey '^p' history-search-backward

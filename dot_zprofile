@@ -1,7 +1,7 @@
 # set env vars for login zsh, ZDOTDIR => ~/.config/zsh
 
 # maybe emacsclient -nc ??
-export EDITOR="nvim"
+export EDITOR="vim"
 export TERMINAL="kitty"
 # export MUSPLAYER="termusic"
 export BROWSER="librewolf"
