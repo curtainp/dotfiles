@@ -1,0 +1,49 @@
+# MacOS ships with a slightly out-of-date soft
+brew "less"
+brew "git"
+
+# jq for JSON editor
+brew "jq"
+
+# Useful terminal tools
+brew "ripgrep"
+brew "eza"
+brew "bat"
+brew "btop"
+brew "tmux"
+brew "zoxide"
+brew "7zip"
+brew "fzf"
+brew "direnv"
+brew "gpg"
+
+# Dotfiles manager
+brew "chezmoi"
+
+# Keyboard remapper
+brew "kanata"
+
+# Fonts
+cask "font-iosevka"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-lxgw-wenkai"
+cask "font-symbols-only-nerd-font"
+
+# Terminal
+cask "ghostty"
+
+# Password Manager
+cask "keepassxc"
+
+# Clash
+cask "clash-verge-rev"
+
+# Dropbox
+cask "dropbox"
+
+# Discord
+cask "discord"
+
+# Emacs
+tap "d12frosted/emacs-plus"
+brew "d12frosted/emacs-plus/emacs-plus@31", args: ["with-memeplex-wide-icon"]
