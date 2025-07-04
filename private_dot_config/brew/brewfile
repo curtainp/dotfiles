@@ -12,7 +12,7 @@ brew "git"
 # brew "llm"
 
 # Rust
-brew "rustup"
+# brew "rustup"
 
 # Privacy browser
 cask "librewolf"

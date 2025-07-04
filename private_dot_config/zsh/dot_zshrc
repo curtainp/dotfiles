@@ -72,8 +72,8 @@ if [[ -d ~/.local/bin ]];then
 fi
 
 # Rust
-if [[ -d ~/.cargo/bin ]]; then
-  export PATH="$HOME/.cargo/bin:$PATH"
+if [[ -d ~/.local/share/cargo/bin ]]; then
+  export PATH="$HOME/.local/share/cargo/bin:$PATH"
 fi
 
 # Flutter
