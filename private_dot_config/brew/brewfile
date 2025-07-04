@@ -17,6 +17,9 @@ brew "rustup"
 # Privacy browser
 cask "librewolf"
 
+# Auth tools
+brew "pinentry-mac"
+
 # Productivity
 cask "alfred"
 cask "hammerspoon"
