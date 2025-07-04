@@ -2,6 +2,28 @@
 brew "less"
 brew "git"
 
+# git enhance
+# brew "git-absorb"
+
+# Linux containerd promote (virtual machine)
+# brew "lima"
+
+# LLM cli
+# brew "llm"
+
+# Rust
+brew "rustup"
+
+# Privacy browser
+cask "librewolf"
+
+# Productivity
+cask "alfred"
+cask "hammerspoon"
+
+# unar: unarchiver for many formats
+brew "unar"
+
 # jq for JSON editor
 brew "jq"
 
@@ -17,11 +39,15 @@ brew "fzf"
 brew "direnv"
 brew "gpg"
 
+# Terminal text-based recording
+brew "asciinema"
+
 # Dotfiles manager
 brew "chezmoi"
 
 # Keyboard remapper
 brew "kanata"
+cask "karabiner-elements"
 
 # Fonts
 cask "font-iosevka"
@@ -43,6 +69,9 @@ cask "dropbox"
 
 # Discord
 cask "discord"
+
+# OBS
+cask "obs"
 
 # Emacs
 tap "d12frosted/emacs-plus"
