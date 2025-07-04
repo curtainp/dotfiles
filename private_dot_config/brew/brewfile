@@ -24,6 +24,12 @@ brew "pinentry-mac"
 cask "alfred"
 cask "hammerspoon"
 
+# Blog Generater
+brew "hugo"
+
+# Sync tools
+# brew "rsync"
+
 # unar: unarchiver for many formats
 brew "unar"
 
