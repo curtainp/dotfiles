@@ -17,8 +17,12 @@ brew "git"
 # Network tools
 cask "wireshark-app"
 
+# hashcat for variety password crack
+brew "hashcat"
+
 # Privacy browser
 cask "librewolf"
+cask "ungoogled-chromium"
 
 # Auth tools
 brew "pinentry-mac"
