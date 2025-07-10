@@ -11,6 +11,9 @@ brew "git"
 # LLM cli
 # brew "llm"
 
+# helix editor
+brew "helix"
+
 # Rust
 # brew "rustup"
 

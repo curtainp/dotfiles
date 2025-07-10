@@ -1,0 +1,16 @@
+theme = "onedark"
+
+[editor]
+auto-info = false            # whether to display info boxes
+completion-timeout = 5       # default is 250ms, set to 5 for instant
+cursorline = true            # highlight all lines with a cursor
+default-yank-register = "+"  # use system clipboard
+line-number = "relative"
+inline-diagnostics.cursor-line = "hint"
+smart-tab.enable = false     # tab insert tab character
+soft-wrap.enable = true
+
+[editor.indent-guides]
+character = "╎"
+render = true
+skip-levels = 1
