@@ -1,7 +1,7 @@
 theme = "onedark"
 
 [editor]
-auto-info = false            # whether to display info boxes
+auto-info = true            # whether to display info boxes
 completion-timeout = 5       # default is 250ms, set to 5 for instant
 cursorline = true            # highlight all lines with a cursor
 default-yank-register = "+"  # use system clipboard
@@ -14,3 +14,19 @@ soft-wrap.enable = true
 character = "╎"
 render = true
 skip-levels = 1
+
+[editor.cursor-shape]
+insert = "bar"
+
+[keys.normal.g]
+# newline without continue comment
+O = ["open_above", "delete_word_backward"]
+o = ["open_below", "delete_word_backward"]
+
+[keys.normal.space]
+# filter ERROR diagnostics
+C-d = "@<space>D%severity ERROR "
+
+[keys.normal]
+x = "select_line_below"
+X = "select_line_above"

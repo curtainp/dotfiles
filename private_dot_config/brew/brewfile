@@ -14,6 +14,9 @@ brew "git"
 # helix editor
 brew "helix"
 
+# Python tools
+brew "ruff"
+
 # Rust
 # brew "rustup"
 

@@ -5,6 +5,7 @@ font-family = "LXGW WenKai Mono"
 font-size = 16
 cursor-style = block
 cursor-style-blink = false
+macos-option-as-alt = true
 # theme = "catppuccin-mocha"
 # background-opacity = 0.6
 # window-theme = ghostty
