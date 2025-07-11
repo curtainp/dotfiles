@@ -16,6 +16,7 @@ brew "helix"
 
 # Python tools
 brew "ruff"
+brew "uv"
 
 # Rust
 # brew "rustup"
@@ -27,7 +28,7 @@ cask "wireshark-app"
 brew "hashcat"
 
 # Privacy browser
-cask "librewolf"
+# cask "librewolf"
 cask "ungoogled-chromium"
 
 # Auth tools
