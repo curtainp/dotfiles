@@ -22,6 +22,9 @@ insert = "bar"
 # newline without continue comment
 O = ["open_above", "delete_word_backward"]
 o = ["open_below", "delete_word_backward"]
+# overwrite goto_first_nonwhitespace
+s = "signature_help"
+# a = "code_action"
 
 [keys.normal.space]
 # filter ERROR diagnostics
@@ -30,3 +33,7 @@ C-d = "@<space>D%severity ERROR "
 [keys.normal]
 x = "select_line_below"
 X = "select_line_above"
+
+[keys.select.g]
+s = "signature_help"
+# a = "code_action"

@@ -2,6 +2,9 @@
 brew "less"
 brew "git"
 
+# cmake
+brew "cmake"
+
 # git enhance
 # brew "git-absorb"
 
@@ -20,12 +23,19 @@ brew "uv"
 
 # Rust
 # brew "rustup"
+brew "rust-analyzer"
 
 # Network tools
 cask "wireshark-app"
 
 # hashcat for variety password crack
 brew "hashcat"
+
+# RE tools
+cask "binary-ninja-free"
+
+# web pentest tool
+cask "caido"
 
 # Privacy browser
 # cask "librewolf"
