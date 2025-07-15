@@ -2,8 +2,9 @@
 brew "less"
 brew "git"
 
-# cmake
+# cmake (pwntools needed)
 brew "cmake"
+brew "pkg-config"
 
 # git enhance
 # brew "git-absorb"
