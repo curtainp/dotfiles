@@ -22,6 +22,11 @@ brew "helix"
 brew "ruff"
 brew "uv"
 
+# markdown
+brew "marksman"
+brew "harper"
+brew "prettier"
+
 # Rust
 # brew "rustup"
 brew "rust-analyzer"
