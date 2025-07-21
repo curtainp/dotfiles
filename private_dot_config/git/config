@@ -3,6 +3,10 @@
 	name = curtainp
 	email = curtainwk@gmail.com
 	signingkey = 45836EB6A52FF303
+[alias]
+	co = 'checkout'
+	st = 'status'
+	br = 'branch'
 [pull]
 	rebase = true
 [init]

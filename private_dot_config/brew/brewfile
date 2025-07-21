@@ -5,12 +5,25 @@ brew "git"
 # cmake (pwntools needed)
 brew "cmake"
 brew "pkg-config"
+brew 'autoconf'
+brew 'glib'
 
 # git enhance
 # brew "git-absorb"
 
 # Linux containerd promote (virtual machine)
 # brew "lima"
+
+# terminal image viewer
+# brew "viu"
+
+# web content discovery tool
+brew "feroxbuster"
+
+cask "telegram"
+
+# appcleaner for uninstall app
+cask 'appcleaner'
 
 # LLM cli
 # brew "llm"
@@ -38,7 +51,7 @@ cask "wireshark-app"
 brew "hashcat"
 
 # RE tools
-cask "binary-ninja-free"
+# cask "binary-ninja-free"
 
 # web pentest tool
 cask "caido"
@@ -117,5 +130,5 @@ cask "obs"
 # brew "d12frosted/emacs-plus/emacs-plus@31", args: ["with-memeplex-wide-icon"]
 
 # Use this Emacs formula to disble native-comp
-tap "daviderestivo/emacs-head"
-brew "emacs-head@31", args: ["with-cocoa", "with-tree-sitter", "with-mps", "with-infinity-yak-andwhite"]
+# tap "daviderestivo/emacs-head"
+# brew "emacs-head@31", args: ["with-cocoa", "with-tree-sitter", "with-mps", "with-infinity-yak-andwhite"]
