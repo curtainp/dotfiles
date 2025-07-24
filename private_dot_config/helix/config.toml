@@ -33,7 +33,14 @@ C-d = "@<space>D%severity ERROR "
 [keys.normal]
 x = "select_line_below"
 X = "select_line_above"
+C-s = ":write"
 
 [keys.select.g]
 s = "signature_help"
 # a = "code_action"
+
+[keys.insert]
+C-f = "move_char_right"
+C-b = "move_char_left"
+C-a = "goto_line_start"
+C-e = "goto_line_end"

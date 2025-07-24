@@ -17,6 +17,9 @@ brew 'glib'
 # terminal image viewer
 # brew "viu"
 
+# vial current need rosetta, I donot want install it
+# cask "vial"
+
 # web content discovery tool
 brew "feroxbuster"
 
