@@ -25,6 +25,9 @@ brew "feroxbuster"
 
 cask "telegram"
 
+# latex lsp
+brew "texlab"
+
 # appcleaner for uninstall app
 cask 'appcleaner'
 
