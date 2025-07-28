@@ -7,6 +7,8 @@ brew "cmake"
 brew "pkg-config"
 brew 'autoconf'
 brew 'glib'
+# for emacs spell tool: jinx
+brew "enchant"
 
 # git enhance
 # brew "git-absorb"
@@ -82,6 +84,9 @@ brew "hugo"
 # unar: unarchiver for many formats
 brew "unar"
 
+# git lfs
+brew "git-lfs"
+
 # jq for JSON editor
 brew "jq"
 
@@ -96,6 +101,8 @@ brew "7zip"
 brew "fzf"
 brew "direnv"
 brew "gpg"
+brew "yazi"
+brew "fd"
 
 # Terminal text-based recording
 brew "asciinema"
@@ -132,8 +139,8 @@ cask "discord"
 cask "obs"
 
 # Emacs
-# tap "d12frosted/emacs-plus"
-# brew "d12frosted/emacs-plus/emacs-plus@31", args: ["with-memeplex-wide-icon"]
+tap "d12frosted/emacs-plus"
+brew "d12frosted/emacs-plus/emacs-plus@31", args: ["with-memeplex-wide-icon"]
 
 # Use this Emacs formula to disble native-comp
 # tap "daviderestivo/emacs-head"
