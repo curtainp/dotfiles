@@ -9,6 +9,7 @@ brew 'autoconf'
 brew 'glib'
 # for emacs spell tool: jinx
 brew "enchant"
+brew "pngpaste"
 
 # git enhance
 # brew "git-absorb"
