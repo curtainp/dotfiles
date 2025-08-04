@@ -1,7 +1,8 @@
+# -*- mode: bash-ts; -*-
 # set env vars for login zsh, ZDOTDIR => ~/.config/zsh
 
 # maybe emacsclient -nc ??
-export EDITOR="hx"
+export EDITOR="emacs"
 export TERMINAL="ghostty"
 # export MUSPLAYER="termusic"
 export BROWSER="ungoogled-chromium"
