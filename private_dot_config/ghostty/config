@@ -1,8 +1,8 @@
-font-family = "Iosevka"
-font-family = "JetBrainsMono"
+font-family = "Iosevka Nerd Font"
+font-family = "JetBrainsMono NF"
 font-family = "Symbols Nerd Font Mono"
 font-family = "LXGW WenKai Mono"
-font-size = 18
+font-size = 13
 cursor-style = block
 cursor-style-blink = false
 macos-option-as-alt = true

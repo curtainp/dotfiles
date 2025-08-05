@@ -1,0 +1,4 @@
+export DWM=~/workspace/tools/dwm
+xrdb -merge ~/.Xresources
+
+exec dwm
