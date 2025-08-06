@@ -1,0 +1,7 @@
+https://www.dcode.fr
+https://gchq.github.io/CyberChef/
+https://giapppp.github.io (blog,cryptography)
+https://ibrahimadel.netlify.app (blog,cryptography)
+https://writeups.fr (blog,rev,misc)
+https://oxygen28.github.io (blog,forensic)
+https://xargs.org (blog,network_protocol,cryptography)

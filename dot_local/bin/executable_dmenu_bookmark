@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+bookmark_dir="${XDG_CONFIG_HOME:-"$HOME/.config"}"
+bookmark_db="$bookmark_dir/bookmarks/db.txt"
+
+[ ! -e "$bookmark_db" ] && exit 1
+
+choice=$(cat "$bookmark_db" | dmenu -i -l 10 -p "Bookmark")
+
+BROWSER="chromium"
+
+if [[ ! -z "$choice" ]]; then
+   if [[ $choice != http* ]]; then
+       search="https://google.com/search?q=$choice"
+       $BROWSER "$search" 
+   else
+       link=$(echo "$choice" | awk '{print $1}')
+       $BROWSER "$link"
+   fi
+fi
