@@ -1,0 +1,22 @@
+{{- if eq .chezmoi.os "darwin" }}
+.xinitrc
+.Xresources
+.gnupg/*
+.config/dunst
+.config/fuzzel
+.config/gdb
+.config/systemd
+.config/swappy
+.config/waybar
+.config/swaylock
+.config/qutebrowser
+.config/niri
+.config/mpd
+.config/mpv
+.config/rofi
+.config/x11
+.config/i3
+.config/picom
+.config/rmpc
+.local/bin/dmenu*
+{{- end }}
