@@ -116,7 +116,7 @@ brew "kanata"
 cask "karabiner-elements"
 
 # Fonts
-cask "font-iosevka"
+cask "font-iosevka-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-lxgw-wenkai"
 cask "font-symbols-only-nerd-font"
