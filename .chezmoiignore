@@ -20,3 +20,7 @@
 .config/rmpc
 .local/bin/dmenu*
 {{- end }}
+
+{{- if eq .chezmoi.os "linux" }}
+.config/brew
+{{- end}}
