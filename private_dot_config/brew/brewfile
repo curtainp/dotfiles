@@ -10,6 +10,7 @@ brew 'glib'
 # for emacs spell tool: jinx
 brew "enchant"
 brew "pngpaste"
+cask "mactex"
 
 # git enhance
 # brew "git-absorb"
@@ -42,9 +43,6 @@ brew "shfmt"
 
 # fancy diff which understands syntax
 brew "difftastic"
-# syntax highlight for git diff, blame
-brew "git-delta"
-brew "git-imerge"
 
 # LLM cli
 # brew "llm"
@@ -141,9 +139,6 @@ cask "ghostty"
 # Password Manager
 cask "keepassxc"
 
-# Clash
-cask "clash-verge-rev"
-
 # Dropbox
 cask "dropbox"
 
@@ -152,6 +147,11 @@ cask "discord"
 
 # OBS
 cask "obs"
+
+# Video tools
+cask "handbrake-app"
+cask "vlc"
+cask "blender"
 
 # Emacs
 tap "d12frosted/emacs-plus"
