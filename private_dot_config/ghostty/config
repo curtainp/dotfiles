@@ -18,3 +18,4 @@ macos-non-native-fullscreen = visible-menu
 # this option only work with window-decoration equal to false
 fullscreen = false
 maximize = true
+shell-integration-features = ssh-terminfo,ssh-env
