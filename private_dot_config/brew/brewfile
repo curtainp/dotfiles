@@ -1,15 +1,18 @@
 # MacOS ships with a slightly out-of-date soft
 brew "less"
 brew "git"
+brew "openvpn"
 
 # cmake (pwntools needed)
 brew "cmake"
 brew "pkg-config"
 brew 'autoconf'
+brew "automake"
 brew 'glib'
 # for emacs spell tool: jinx
 brew "enchant"
 brew "pngpaste"
+brew "librime"
 cask "mactex"
 
 # git enhance
@@ -65,6 +68,7 @@ brew "rust-analyzer"
 
 # Network tools
 cask "wireshark-app"
+brew "nmap"
 
 # hashcat for variety password crack
 brew "hashcat"
@@ -149,13 +153,16 @@ cask "discord"
 cask "obs"
 
 # Video tools
-cask "handbrake-app"
+# cask "handbrake-app"
 cask "vlc"
-cask "blender"
+# cask "blender"
+
+# rime
+cask "squirrel-app"
 
 # Emacs
-tap "d12frosted/emacs-plus"
-brew "d12frosted/emacs-plus/emacs-plus@31", args: ["with-memeplex-wide-icon"]
+# tap "d12frosted/emacs-plus"
+# brew "d12frosted/emacs-plus/emacs-plus@31", args: ["with-memeplex-wide-icon"]
 
 # Use this Emacs formula to disble native-comp
 # tap "daviderestivo/emacs-head"
