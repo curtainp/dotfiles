@@ -10,6 +10,7 @@ df="df -h" \
 mv="mv -i" \
 du="du -h -d 1" \
 k="killall" \
+msf="msfconsole" \
 icat="kitten icat" \
 open="xdg-open" \
 emc="emacsclient -nc" \

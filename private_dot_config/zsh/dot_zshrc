@@ -95,6 +95,11 @@ if [[ -f "/opt/homebrew/bin/brew" ]] then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# Metasploit
+if [[ -d /opt/metasploit-framework/bin ]]; then
+  export PATH="/opt/metasploit-framework/bin:$PATH"
+fi
+
 function ra() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"

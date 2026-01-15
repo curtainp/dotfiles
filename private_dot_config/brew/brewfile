@@ -2,6 +2,8 @@
 brew "less"
 brew "git"
 brew "openvpn"
+brew "bear"
+brew "pandoc"
 
 # cmake (pwntools needed)
 brew "cmake"
@@ -14,6 +16,9 @@ brew "enchant"
 brew "pngpaste"
 brew "librime"
 cask "mactex"
+
+# for hackmyvm
+# cask "virtualbox"
 
 # git enhance
 # brew "git-absorb"
@@ -51,7 +56,7 @@ brew "difftastic"
 # brew "llm"
 
 # helix editor
-brew "helix"
+# brew "helix"
 
 # Python tools
 brew "ruff"
@@ -160,10 +165,13 @@ cask "vlc"
 # rime
 cask "squirrel-app"
 
+# flameshot
+cask "flameshot"
+
 # Emacs
-# tap "d12frosted/emacs-plus"
-# brew "d12frosted/emacs-plus/emacs-plus@31", args: ["with-memeplex-wide-icon"]
+tap "d12frosted/emacs-plus"
+brew "d12frosted/emacs-plus/emacs-plus@30", args: ["with-memeplex-wide-icon", "with-xwidgets"]
 
 # Use this Emacs formula to disble native-comp
 # tap "daviderestivo/emacs-head"
-# brew "emacs-head@31", args: ["with-cocoa", "with-tree-sitter", "with-mps", "with-infinity-yak-andwhite"]
+# brew "emacs-head", args: ["with-cocoa", "with-xwidgets", "with-native-comp", "with-tree-sitter", "with-infinity-yak-andwhite"]
