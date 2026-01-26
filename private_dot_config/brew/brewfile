@@ -4,6 +4,12 @@ brew "git"
 brew "openvpn"
 brew "bear"
 brew "pandoc"
+brew "exiftool"
+brew "mpv"
+brew "bluetoothconnector"
+
+# opencode
+brew "anomalyco/tap/opencode"
 
 # cmake (pwntools needed)
 brew "cmake"
@@ -15,6 +21,7 @@ brew 'glib'
 brew "enchant"
 brew "pngpaste"
 brew "librime"
+brew "wget"
 cask "mactex"
 
 # for hackmyvm
@@ -170,7 +177,7 @@ cask "flameshot"
 
 # Emacs
 tap "d12frosted/emacs-plus"
-brew "d12frosted/emacs-plus/emacs-plus@30", args: ["with-memeplex-wide-icon", "with-xwidgets"]
+brew "emacs-plus@31", args: ["with-xwidgets"]
 
 # Use this Emacs formula to disble native-comp
 # tap "daviderestivo/emacs-head"

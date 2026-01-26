@@ -1,0 +1,4 @@
+patches:
+  - aggressive-read-buffering
+  - frame-transparency
+icon: infinity-yak-noir
